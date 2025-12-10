@@ -1,0 +1,11 @@
+{
+  "token": "MTQ0NTEzMjc1NjQ0NjIyMDQ5MQ.GBIu18.2RWMcphisfoWKi8hiPNdBnWmplF3skuH36QoxA",
+  "prefix": "+",
+  "adminPassword": "adminDMS132",
+  "adminRoles": ["AdminBotsGEN"],
+  "categories": {
+    "support": "1445852419581022511",
+    "buy": "1445852453638504619",
+    "reseller": "1445852484974149735"
+  }
+}

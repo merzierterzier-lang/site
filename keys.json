@@ -1,0 +1,46 @@
+{
+  "DAILY-R339613KLKM7JEC7RUEJ86AM3": {
+    "type": "daily",
+    "used": true
+  },
+  "DAILY-B5YQNE9LFAPKLQCRVT8I9XAGY": {
+    "type": "daily",
+    "used": true
+  },
+  "DAILY-SPNR74JKUXAC6KV07B8AEJIJV": {
+    "type": "daily",
+    "used": true
+  },
+  "LIFETIME-CANYX1JYJARGQAKW04LS721UA": {
+    "type": "lifetime",
+    "used": true
+  },
+  "MONTHLY-WX6VGLSQDEO391J5NIVWZGR7M": {
+    "type": "monthly",
+    "used": true
+  },
+  "MONTHLY-FTEKKIMNTBC2S59PCH886KRG7": {
+    "type": "monthly",
+    "used": true
+  },
+  "LIFETIME-AUYN9SXDYRRRL8MI1Q52LKEPX": {
+    "type": "lifetime",
+    "used": false
+  },
+  "LIFETIME-Y35EI7SWAVNWT6H0UDWFOBE96": {
+    "type": "lifetime",
+    "used": true
+  },
+  "LIFETIME-QQ714C4AEMYR4VR9D2MQFXM8L": {
+    "type": "lifetime",
+    "used": true
+  },
+  "WEEKLY-BN5AQ7S8XZQDV9C8LQLCY6FWH": {
+    "type": "weekly",
+    "used": true
+  },
+  "LIFETIME-CEQ3876AGXFYCM0JEJHY41LVG": {
+    "type": "lifetime",
+    "used": true
+  }
+}

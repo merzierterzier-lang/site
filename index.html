@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMS SERVICE - FiveM Keys & Accounts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🎮 DMS SERVICE</div>
+            <div class="nav-links">
+                <a href="#home" onclick="showPage('home')">Home</a>
+                <a href="#catalog">Catalog</a>
+                <a href="#faq">FAQ & Help</a>
+                <a href="#support">Support</a>
+                <a href="#affiliate">Affiliate</a>
+                <button class="btn-signin" onclick="showPage('login')">Sign In</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <div class="hero">
+            <h1>BENEFITS IN EVERY BATTLE WITH DMS SERVICE !</h1>
+            <p>Unlock premium gaming benefits, exclusive rewards, and competitive advantages that elevate your gameplay to the next level.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="showPage('login')">Explore Catalog</button>
+                <button class="btn-secondary" onclick="showPage('signup')">Create Account</button>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <h3>2+</h3>
+                <p>Years in Service</p>
+                <small>Delivering reliable software solutions</small>
+            </div>
+            <div class="stat-card">
+                <h3>1</h3>
+                <p>Supported Platform</p>
+                <small>Optimized for seamless performance</small>
+            </div>
+            <div class="stat-card">
+                <h3>15k+</h3>
+                <p>Satisfied Users</p>
+                <small>Trusted by a growing community</small>
+            </div>
+            <div class="stat-card">
+                <h3>500+</h3>
+                <p>Features & Tools</p>
+                <small>Comprehensive functionality built-in</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Page -->
+    <div id="login" class="page">
+        <div class="auth-container">
+            <div class="auth-box">
+                <h2>Welcome back</h2>
+                <p>Sign in to your account to continue</p>
+                
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="loginUsername" placeholder="Enter your username">
+                </div>
+                
+                <div class="form-group">
+                    <label>Password</label>
+                    <div class="password-group">
+                        <input type="password" id="loginPassword" placeholder="Enter your password">
+                        <span class="eye-icon" onclick="togglePassword('loginPassword')">👁️</span>
+                    </div>
+                </div>
+
+                <button class="btn-signin" onclick="login()">Sign in</button>
+
+                <p class="auth-link">Don't have an account? <a onclick="showPage('signup')">Sign up</a></p>
+                <div id="loginError" class="error-msg"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Page -->
+    <div id="signup" class="page">
+        <div class="auth-container">
+            <div class="auth-box">
+                <h2>Create your account</h2>
+                <p>Join the platform in a few seconds</p>
+                
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="signupUsername" placeholder="Enter username">
+                </div>
+                
+                <div class="form-group">
+                    <label>Password</label>
+                    <div class="password-group">
+                        <input type="password" id="signupPassword" placeholder="Enter password">
+                        <span class="eye-icon" onclick="togglePassword('signupPassword')">👁️</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <div class="password-group">
+                        <input type="password" id="signupConfirm" placeholder="Repeat password">
+                        <span class="eye-icon" onclick="togglePassword('signupConfirm')">👁️</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>License key</label>
+                    <input type="text" id="licenseKey" placeholder="e.g. lifetime-XXXXX (optional)">
+                </div>
+
+                <button class="btn-signin" onclick="signup()">Create account</button>
+
+                <p class="auth-link">Already have an account? <a onclick="showPage('login')">Sign in now</a></p>
+                <div id="signupError" class="error-msg"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Page -->
+    <div id="dashboard" class="page">
+        <div class="dashboard-container">
+            <div class="dashboard-sidebar">
+                <h3>Menu</h3>
+                <button class="menu-item active" onclick="showDashboardTab('account')">My Account</button>
+                <button class="menu-item" onclick="showDashboardTab('keys')">Activate Key</button>
+                <button class="menu-item" onclick="showDashboardTab('generate')">Generate Account</button>
+                <button class="menu-item" onclick="showDashboardTab('admin')">Admin Panel</button>
+                <button class="menu-item logout" onclick="logout()">Logout</button>
+            </div>
+
+            <div class="dashboard-content">
+                <!-- Account Info Tab -->
+                <div id="tab-account" class="tab-content active">
+                    <h2>👤 My Account</h2>
+                    <div class="info-card">
+                        <div class="info-row">
+                            <span>User ID</span>
+                            <strong id="accUserId">-</strong>
+                        </div>
+                        <div class="info-row">
+                            <span>Username</span>
+                            <strong id="accUsername">-</strong>
+                        </div>
+                        <div class="info-row">
+                            <span>Type</span>
+                            <strong id="accType">-</strong>
+                        </div>
+                        <div class="info-row">
+                            <span>Expires</span>
+                            <strong id="accExpires">-</strong>
+                        </div>
+                        <div class="info-row">
+                            <span>Key</span>
+                            <strong id="accKey">-</strong>
+                        </div>
+                        <div class="info-row">
+                            <span>HWID</span>
+                            <strong id="accHWID">-</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activate Key Tab -->
+                <div id="tab-keys" class="tab-content">
+                    <h2>🔑 Activate a Key</h2>
+                    <div class="panels">
+                        <div class="panel">
+                            <div class="panel-header">
+                                <h3>License Activation</h3>
+                                <span class="small-chip">Enter Key</span>
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label>Enter your license key</label>
+                                    <input type="text" id="activateKeyInput" placeholder="e.g. lifetime-XXXXX-XXXXX">
+                                </div>
+                                <button class="btn-primary" onclick="activateKey()">Activate Key</button>
+                                <div id="activateMsg" class="result-msg"></div>
+                            </div>
+                        </div>
+
+                        <div class="panel">
+                            <div class="panel-header">
+                                <h3>Hardware ID</h3>
+                                <span class="small-chip">Device</span>
+                            </div>
+                            <div class="panel-body">
+                                <p class="muted">This HWID is calculated from your browser/device. It will be linked to the key when you activate.</p>
+                                <div id="deviceHwid" class="hwid-box">-</div>
+                                <div style="display:flex; gap:10px; margin-top:12px;">
+                                    <button class="btn-copy" onclick="copyHWID()">📋 Copy HWID</button>
+                                    <button class="btn-secondary" onclick="regenerateHWID()">🔁 Regenerate</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Generate Account Tab -->
+                <div id="tab-generate" class="tab-content">
+                    <h2>🎁 Generate Account</h2>
+                    <div class="panels">
+                        <div class="panel">
+                            <div class="panel-header">
+                                <h3>Generate</h3>
+                                <span class="small-chip">1 per request</span>
+                            </div>
+                            <div class="panel-body">
+                                <p class="muted">Get a ready-to-use account from the pool. Each generation consumes one entry.</p>
+                                <button class="btn-primary" onclick="generateAccount()">📩 Generate Account</button>
+                                <div id="generateMsg" class="result-msg"></div>
+                            </div>
+                        </div>
+
+                        <div class="panel">
+                            <div class="panel-header">
+                                <h3>Result</h3>
+                                <span class="small-chip">Account</span>
+                            </div>
+                            <div class="panel-body">
+                                <div id="accountDisplay" class="account-box hidden">
+                                    <p class="muted">Your Account:</p>
+                                    <div class="account-text" id="accountText">-</div>
+                                    <div style="display:flex; gap:10px; margin-top:12px;">
+                                        <button class="btn-copy" onclick="copyAccount()">📋 Copy</button>
+                                        <button class="btn-secondary" onclick="regenAccountPreview()">🔁 New</button>
+                                    </div>
+                                </div>
+                                <div id="accountEmpty" class="muted">No account generated yet.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin Panel Tab -->
+                <div id="tab-admin" class="tab-content">
+                    <h2>🔐 Admin Panel</h2>
+                    <div class="form-box">
+                        <div class="form-group">
+                            <label>Admin Password</label>
+                            <input type="password" id="adminPassword" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label>Key Type</label>
+                            <select id="keyType">
+                                <option value="daily">Daily (24h)</option>
+                                <option value="weekly">Weekly (7j)</option>
+                                <option value="monthly">Monthly (30j)</option>
+                                <option value="lifetime">Lifetime (Unlimited)</option>
+                            </select>
+                        </div>
+                        <button class="btn-primary" onclick="genKeyAdmin()">🔑 Generate Key</button>
+                        <div id="adminMsg" class="result-msg"></div>
+                        <div id="keyDisplay" class="account-box hidden">
+                            <p>Generated Key:</p>
+                            <div class="account-text" id="keyText"></div>
+                            <button class="btn-copy" onclick="copyKey()">📋 Copy</button>
+                        </div>
+
+                        <hr style="margin: 30px 0; border: 1px solid rgba(139, 92, 246, 0.2);">
+                        
+                        <h3 style="color: var(--light-primary); margin-bottom: 20px;">🔄 Reset HWID</h3>
+                        <div class="form-group">
+                            <label>User ID</label>
+                            <input type="text" id="resetHwidUserId" placeholder="Enter user ID">
+                        </div>
+                        <button class="btn-primary" onclick="resetHwid()" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">🔄 Reset HWID</button>
+                        <div id="resetMsg" class="result-msg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

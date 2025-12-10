@@ -1,0 +1,22 @@
+{
+  "1445132756446220491": {
+    "type": "daily",
+    "expires": 1765456917219,
+    "key": "DAILY-R339613KLKM7JEC7RUEJ86AM3"
+  },
+  "1765370964717": {
+    "username": "admindms",
+    "password": "admin123",
+    "type": "daily",
+    "expires": 1765457380896,
+    "key": "DAILY-B5YQNE9LFAPKLQCRVT8I9XAGY"
+  },
+  "1765371201077": {
+    "username": "admindms0",
+    "password": "admin123DMS",
+    "type": "lifetime",
+    "expires": null,
+    "key": "LIFETIME-CEQ3876AGXFYCM0JEJHY41LVG",
+    "hwid": "0000000032D00EAD"
+  }
+}
